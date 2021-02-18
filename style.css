@@ -87,3 +87,10 @@ a:active {
 	vertical-align: sub;
 	margin-right: 5px;
 }
+
+/* Media Query: Large Smart Phones Vertical */
+@media screen and(max-width: 600px) {
+	.container {
+		flex-direction: column;
+	}
+}
