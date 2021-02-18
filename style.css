@@ -70,6 +70,17 @@ a:active {
 	text-decoration: underline;
 }
 
+.fa-window-close {
+	float: right;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.name {
+	margin-top: 25px;
+	margin-right: 20px;
+}
+
 .name img {
 	height: 20px;
 	width: 20px;
