@@ -183,6 +183,8 @@ button:hover {
 	background-color: #721c9b;
 	filter: brightness(110%);
 	color: rgb(93, 246, 33);
+	box-shadow: 0px 10px 15px rgba(110, 46, 229, 0.4);
+	transform: translateY(-4px);
 }
 button:focus {
 	outline: none;
