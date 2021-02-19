@@ -12,9 +12,18 @@ function showModal() {
     websiteNamelEl.focus();
 }
 
-// Event Listeners
+// Modal Event Listeners
 modalShow.addEventListener('click', showModal);
 modalClose.addEventListener('click',
     () => modal.classList.remove('show-modal'));
-window.addEventListener('click', (e) => e.target === modal ? modal.classList.remove('show-modal') : false);   
+window.addEventListener('click', (e) => e.target === modal ? modal.classList.remove('show-modal') : false);  
+
+function storeBookmark(e) {
+    e.preventDefault();
+    console.log(storeBookmark)
+};
+    
+// Event Listener
+bookmarkForm.addEventListener('submit', storeBookmark);
+
 
