@@ -160,6 +160,11 @@ h3 {
 	display: block;
 	outline: none;
 }
+
+.form-label {
+	color: var(--primary-color);
+	display: block;
+}
 /* Media Query: Large Smart Phones Vertical */
 @media screen and(max-width: 600px) {
 	.container {
