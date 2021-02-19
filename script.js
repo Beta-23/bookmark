@@ -27,6 +27,7 @@ function storeBookmark(e) {
     if (!urlValue.includes('https://') && !urlValue.includes('http://')) {
         urlValue = `https://${urlValue}`;
     }
+    console.log(nameValue, urlValue);
 };
     
 // Event Listener
