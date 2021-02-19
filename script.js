@@ -18,9 +18,12 @@ modalClose.addEventListener('click',
     () => modal.classList.remove('show-modal'));
 window.addEventListener('click', (e) => e.target === modal ? modal.classList.remove('show-modal') : false);  
 
+// Handle data inputs on form
 function storeBookmark(e) {
     e.preventDefault();
-    console.log(storeBookmark)
+    const nameValue = websiteNameEl.value;
+    let urlValue = websiteUrlEl.value;
+    console.log(`nameValue:${nameValue},Url:${urlValue}`); 
 };
     
 // Event Listener
