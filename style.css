@@ -137,6 +137,16 @@ a:active {
 	color: whitesmoke;
 	padding: 15px;
 }
+
+h3 {
+	margin: 0;
+}
+
+.modal-content {
+	padding: 20px;
+	background: whitesmoke;
+}
+
 /* Media Query: Large Smart Phones Vertical */
 @media screen and(max-width: 600px) {
 	.container {
