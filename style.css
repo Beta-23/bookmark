@@ -98,6 +98,13 @@ a:active {
 	right: 0;
 	bottom: 0;
 }
+
+.show-modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /* Media Query: Large Smart Phones Vertical */
 @media screen and(max-width: 600px) {
 	.container {
