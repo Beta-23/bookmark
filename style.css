@@ -122,6 +122,21 @@ a:active {
 	}
 }
 
+.close-icon {
+	float: right;
+	color: whitesmoke;
+	font-size: 24px;
+	position: relative;
+	top: 13px;
+	right: 13px;
+	cursor: pointer;
+}
+
+.modal-header {
+	background: var(--primary-color);
+	color: whitesmoke;
+	padding: 15px;
+}
 /* Media Query: Large Smart Phones Vertical */
 @media screen and(max-width: 600px) {
 	.container {
