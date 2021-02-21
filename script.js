@@ -37,11 +37,12 @@ function storeBookmark(e) {
     const nameValue = websiteNameEl.value;
     let urlValue = websiteUrlEl.value;
     // Add 'https://' if not available
-    if (!urlValue.includes('https://', 'http://')) {
+    if (!urlValue.includes('https://') && !urlValue.includes('http://')) {
         urlValue = `https://${urlValue}`;
     }
     // Validate
-    validate(nameValue, urlValue);
+    if (!validate(nameValue, urlValue));
+    return false;
 };
     
 // Event Listener
