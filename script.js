@@ -46,8 +46,15 @@ function storeBookmark(e) {
         urlValue = `https://${urlValue}`;
     }
     // Validate
-    if (!validate(nameValue, urlValue));
-    return false;
+    if (!validate(nameValue, urlValue)) {
+        return false;
+    }
+    // Set bookmark object, add to array
+    const bookmark = {
+        name: nameValue,
+        url: urlValue,
+    };
+    bookmarks.push(bookmark);
 };
 
 // Build Bookmarks
