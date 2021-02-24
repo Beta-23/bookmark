@@ -55,6 +55,9 @@ function storeBookmark(e) {
         url: urlValue,
     };
     bookmarks.push(bookmark);
+    console.log(bookmarks);
+    bookmarkForm.reset();
+    websiteNameEl.focus();
 };
 
 // Build Bookmarks
