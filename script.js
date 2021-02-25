@@ -51,6 +51,7 @@ function fetchBookmarks() {
         ];
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }
+    console.log(bookmarks)
 }
 
 // Handle data inputs on form
@@ -74,6 +75,7 @@ function storeBookmark(e) {
     bookmarks.push(bookmark);
     // Set bookmarks in localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    fetchBookmarks();
     bookmarkForm.reset();
     websiteNameEl.focus();
 };
@@ -114,5 +116,8 @@ function buildBookmarks() {
     
 // Event Listener
 bookmarkForm.addEventListener('submit', storeBookmark);
+
+// On Load, Fetch Bookmarks
+fetchBookmarks();
 
 
