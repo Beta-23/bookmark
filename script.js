@@ -36,6 +36,23 @@ function validate(nameValue, urlValue) {
     return true;
 }
 
+// Fetch bookmarks
+function fetchBookmarks() {
+    // Get bookmarks from localStorage if available
+    if (localStorage.getItem('bookmarks')) {
+        bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    } else {
+        // Create bookmarks array in localStorage
+        bookmarks = [
+            {
+                name: 'AD Solutions',
+                url: 'http://alfreddominguez.com',
+            },
+        ];
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    }
+}
+
 // Handle data inputs on form
 function storeBookmark(e) {
     e.preventDefault();
@@ -55,7 +72,6 @@ function storeBookmark(e) {
         url: urlValue,
     };
     bookmarks.push(bookmark);
-    console.log(JSON.stringify(bookmarks));
     // Set bookmarks in localStorage
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     bookmarkForm.reset();
