@@ -46,7 +46,7 @@ function fetchBookmarks() {
         bookmarks = [
             {
                 name: 'AD Solutions',
-                url: 'http://alfreddominguez.com',
+                url: 'https://alfreddominguez.com',
             },
         ];
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
