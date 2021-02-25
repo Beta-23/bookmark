@@ -56,6 +56,8 @@ function storeBookmark(e) {
     };
     bookmarks.push(bookmark);
     console.log(bookmarks);
+    // Set bookmarks in localStorage
+    localStorage.setItem('bookmarks', bookmarks);
     bookmarkForm.reset();
     websiteNameEl.focus();
 };
