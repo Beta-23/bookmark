@@ -49,6 +49,9 @@ function buildBookmarks() {
         closeIcon.classList.add('fas', 'fa-times');
         closeIcon.setAttribute('title', 'Delete Bookmark');
         closeIcon.setAttribute('onclick', `deleteBookmark('${url}')`);
+        // Favicon / Link Container
+        const linkInfo = document.createElement('div');
+        linkInfo.classList.add('name');
     });
 }
 
