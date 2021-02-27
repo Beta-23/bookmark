@@ -88,12 +88,8 @@ function fetchBookmarks() {
 
 // Delete Bookmark
 function deleteBookmark(url) {
-    // Loop through the bookmarks array
-    bookmarks.forEach((bookmark, i) => {
-        if (bookmark.url === url) {
-            bookmarks.splice(i, 1);
-        }
-    });
+    console.log('Removed:', url)
+};
 
 // Handle data inputs on form
 function storeBookmark(e) {
