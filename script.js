@@ -16,9 +16,8 @@ function showModal() {
 
 // Modal Event Listeners
 modalShow.addEventListener('click', showModal);
-modalClose.addEventListener('click',
-    () => modal.classList.remove('show-modal'));
-window.addEventListener('click', (e) => e.target === modal ? modal.classList.remove('show-modal') : false);  
+modalClose.addEventListener('click', () => modal.classList.remove('show-modal'));
+window.addEventListener('click', (e) => (e.target === modal ? modal.classList.remove('show-modal') : false));
 
 // Validate Form
 function validate(nameValue, urlValue) {
@@ -36,8 +35,10 @@ function validate(nameValue, urlValue) {
     return true;
 }
 
-// Build Bookmarks DOM
+// Build Bookmarks
 function buildBookmarks() {
+    // Remove all bookmark elements
+    bookmarksContainer.textContent = '';
     // Build items
     bookmarks.forEach((bookmark) => {
         const { name, url } = bookmark;
@@ -77,8 +78,8 @@ function fetchBookmarks() {
         // Create bookmarks array in localStorage
         bookmarks = [
             {
-                name: 'AD Solutions',
-                url: 'https://alfreddominguez.com',
+                name: 'Jacinto Design',
+                url: 'http://jacinto.design',
             },
         ];
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
@@ -88,8 +89,6 @@ function fetchBookmarks() {
 
 // Delete Bookmark
 function deleteBookmark(url) {
-    // Remove all bookmark elements
-    bookmarksContainer.textContent = '';
     // Loop through the bookmarks array
     bookmarks.forEach((bookmark, i) => {
         if (bookmark.url === url) {
@@ -99,14 +98,13 @@ function deleteBookmark(url) {
     // Update bookmarks array in localStorage, re-populate DOM
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     fetchBookmarks();
-};
+}
 
-// Handle data inputs on form
 function storeBookmark(e) {
     e.preventDefault();
     const nameValue = websiteNameEl.value;
     let urlValue = websiteUrlEl.value;
-    // Add 'https://' if not available
+    // Add 'https://' if not there
     if (!urlValue.includes('https://') && !urlValue.includes('http://')) {
         urlValue = `https://${urlValue}`;
     }
@@ -120,17 +118,15 @@ function storeBookmark(e) {
         url: urlValue,
     };
     bookmarks.push(bookmark);
-    // Set bookmarks in localStorage
+    // Set bookmarks in localStorage, fetch, reset input fields
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     fetchBookmarks();
     bookmarkForm.reset();
     websiteNameEl.focus();
-};
-    
+}
+
 // Event Listener
 bookmarkForm.addEventListener('submit', storeBookmark);
 
 // On Load, Fetch Bookmarks
 fetchBookmarks();
-
-
