@@ -88,6 +88,8 @@ function fetchBookmarks() {
 
 // Delete Bookmark
 function deleteBookmark(url) {
+    // Remove all bookmark elements
+    bookmarksContainer.textContent = '';
     // Loop through the bookmarks array
     bookmarks.forEach((bookmark, i) => {
         if (bookmark.url === url) {
